@@ -1,0 +1,39 @@
+.bookmarks {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.bookmarks h2 {
+  font-size: 22px;
+  color: #1a1a1a;
+  margin-bottom: 24px;
+}
+
+.status-msg {
+  text-align: center;
+  color: #6b7280;
+  margin: 40px 0;
+  font-size: 15px;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.add-collection-btn {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  background: transparent;
+  color: #6b7280;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.add-collection-btn:hover {
+  border-color: #22c55e;
+  color: #22c55e;
+}

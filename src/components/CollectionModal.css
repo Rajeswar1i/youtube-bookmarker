@@ -1,0 +1,72 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+.modal {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  width: 360px;
+  max-width: 90%;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  border-top: 4px solid #f97316;
+}
+
+.modal h3 {
+  font-size: 18px;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+}
+
+.modal-empty {
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.collection-list {
+  list-style: none;
+  margin-bottom: 16px;
+}
+
+.collection-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #1a1a1a;
+}
+
+.collection-item:hover {
+  background: #fff7ed;
+  color: #f97316;
+}
+
+.col-count {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.modal-close {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid #e5e7eb;
+  color: #6b7280;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.modal-close:hover {
+  border-color: #f97316;
+  color: #f97316;
+}

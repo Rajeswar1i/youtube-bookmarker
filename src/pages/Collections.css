@@ -1,0 +1,105 @@
+.collections {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.collections h2 {
+  font-size: 22px;
+  color: #1a1a1a;
+  margin-bottom: 24px;
+}
+
+.create-collection {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.collection-input {
+  flex: 1;
+  padding: 10px 16px;
+  font-size: 15px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #1a1a1a;
+  outline: none;
+}
+
+.collection-input:focus {
+  border-color: #f97316;
+}
+
+.create-btn {
+  padding: 10px 20px;
+  background: #f97316;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.create-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.collections-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.collection-card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.collection-card:hover {
+  border-color: #f97316;
+}
+
+.collection-info {
+  cursor: pointer;
+}
+
+.collection-info h3 {
+  font-size: 16px;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.collection-info p {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.delete-btn {
+  padding: 6px 12px;
+  background: transparent;
+  border: 1px solid #e5e7eb;
+  color: #6b7280;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.delete-btn:hover {
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+.status-msg {
+  text-align: center;
+  color: #6b7280;
+  margin: 40px 0;
+  font-size: 15px;
+}

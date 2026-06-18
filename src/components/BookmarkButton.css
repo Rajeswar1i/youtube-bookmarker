@@ -1,0 +1,19 @@
+.bookmark-btn {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid #f97316;
+  background: transparent;
+  color: #f97316;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.bookmark-btn:hover {
+  background: #fff7ed;
+}
+
+.bookmark-btn.bookmarked {
+  background: #f97316;
+  border-color: #f97316;
+  color: #fff;
+}
