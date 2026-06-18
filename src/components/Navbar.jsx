@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import './Navbar.css'
 
@@ -7,11 +7,11 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <Link to="/" className="navbar-brand">YouTube Bookmarker</Link>
+      <NavLink to="/" className="navbar-brand">YouTube Bookmarker</NavLink>
       <div className="navbar-links">
-        <Link to="/">Search</Link>
-        <Link to="/bookmarks">Bookmarks</Link>
-        <Link to="/collections">Collections</Link>
+        <NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''} end>Search</NavLink>
+        <NavLink to="/bookmarks" className={({ isActive }) => isActive ? 'active' : ''}>Bookmarks</NavLink>
+        <NavLink to="/collections" className={({ isActive }) => isActive ? 'active' : ''}>Collections</NavLink>
       </div>
       <div className="navbar-user">
         <img src={user.photoURL} alt={user.displayName} className="avatar" />

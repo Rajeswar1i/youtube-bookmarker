@@ -20,6 +20,7 @@ function Collections() {
   return (
     <div className="collections">
       <h2>My Collections</h2>
+      <p className="collections-subtitle">Organize your bookmarked videos into collections.</p>
 
       <div className="create-collection">
         <input
@@ -31,30 +32,31 @@ function Collections() {
           className="collection-input"
         />
         <button onClick={handleCreate} disabled={creating} className="create-btn">
-          {creating ? 'Creating...' : 'Create'}
+          {creating ? 'Creating...' : '+ Create'}
         </button>
       </div>
 
-      {collections.length === 0 && (
-        <p className="status-msg">No collections yet. Create one above.</p>
-      )}
-
-      <div className="collections-grid">
-        {collections.map((col) => (
-          <div key={col.id} className="collection-card">
-            <div className="collection-info" onClick={() => navigate(`/collections/${col.id}`)}>
-              <h3>{col.name}</h3>
-              <p>{col.videos?.length || 0} videos</p>
+      {collections.length === 0 ? (
+        <div className="empty-state">
+          <div style={{ fontSize: '48px' }}>📁</div>
+          <p>No collections yet. Create your first one above.</p>
+        </div>
+      ) : (
+        <div className="collections-grid">
+          {collections.map((col) => (
+            <div key={col.id} className="collection-card">
+              <div className="collection-info" onClick={() => navigate(`/collections/${col.id}`)}>
+                <div className="collection-icon">🎬</div>
+                <h3>{col.name}</h3>
+                <p>{col.videos?.length || 0} videos</p>
+              </div>
+              <button className="delete-btn" onClick={() => deleteCollection(col.id)}>
+                Delete
+              </button>
             </div>
-            <button
-              className="delete-btn"
-              onClick={() => deleteCollection(col.id)}
-            >
-              Delete
-            </button>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   )
 }

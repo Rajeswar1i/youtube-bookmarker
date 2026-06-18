@@ -5,26 +5,35 @@
 }
 
 .collections h2 {
-  font-size: 22px;
+  font-size: 26px;
   color: #1a1a1a;
-  margin-bottom: 24px;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.collections-subtitle {
+  color: #6b7280;
+  font-size: 15px;
+  margin-bottom: 28px;
 }
 
 .create-collection {
   display: flex;
   gap: 12px;
-  margin-bottom: 32px;
+  margin-bottom: 36px;
+  max-width: 560px;
 }
 
 .collection-input {
   flex: 1;
-  padding: 10px 16px;
+  padding: 12px 20px;
   font-size: 15px;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
+  border: 2px solid #e5e7eb;
+  border-radius: 50px;
   background: #ffffff;
   color: #1a1a1a;
   outline: none;
+  transition: border-color 0.2s;
 }
 
 .collection-input:focus {
@@ -32,49 +41,62 @@
 }
 
 .create-btn {
-  padding: 10px 20px;
+  padding: 12px 24px;
   background: #f97316;
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 50px;
   font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.create-btn:hover {
+  background: #ea6c0a;
+  transform: scale(1.04);
 }
 
 .create-btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+  transform: none;
 }
 
 .collections-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
 }
 
 .collection-card {
   background: #ffffff;
-  border-radius: 8px;
+  border-radius: 12px;
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border: 1px solid #e5e7eb;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
 }
 
 .collection-card:hover {
-  border-color: #f97316;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(249,115,22,0.12);
+  border-color: #fed7aa;
 }
 
 .collection-info {
   cursor: pointer;
+  flex: 1;
 }
 
 .collection-info h3 {
   font-size: 16px;
   color: #1a1a1a;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
+  font-weight: 600;
 }
 
 .collection-info p {
@@ -82,24 +104,43 @@
   color: #6b7280;
 }
 
+.collection-icon {
+  font-size: 28px;
+  margin-bottom: 4px;
+}
+
 .delete-btn {
-  padding: 6px 12px;
+  padding: 6px 14px;
   background: transparent;
-  border: 1px solid #e5e7eb;
-  color: #6b7280;
-  border-radius: 6px;
+  border: 1.5px solid #e5e7eb;
+  color: #9ca3af;
+  border-radius: 50px;
   cursor: pointer;
   font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s;
 }
 
 .delete-btn:hover {
   border-color: #ef4444;
   color: #ef4444;
+  background: #fef2f2;
 }
 
 .status-msg {
   text-align: center;
   color: #6b7280;
-  margin: 40px 0;
+  margin: 60px 0;
   font-size: 15px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.empty-state p {
+  color: #6b7280;
+  font-size: 15px;
+  margin-top: 12px;
 }
