@@ -1,0 +1,5 @@
+youtube-bookmarker/
+  vercel.json       ← here
+  package.json
+  .env
+  src/
