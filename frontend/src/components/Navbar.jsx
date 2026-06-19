@@ -3,7 +3,7 @@ import { useAuth } from '../context/AuthContext'
 import './Navbar.css'
 
 function Navbar() {
-  const { user, logOut } = useAuth()
+  const { user, logout } = useAuth()
 
   return (
     <nav className="navbar">
@@ -14,9 +14,9 @@ function Navbar() {
         <NavLink to="/collections" className={({ isActive }) => isActive ? 'active' : ''}>Collections</NavLink>
       </div>
       <div className="navbar-user">
-        <img src={user.photoURL} alt={user.displayName} className="avatar" />
-        <span>{user.displayName}</span>
-        <button onClick={logOut} className="signout-btn">Sign out</button>
+        {user.photo_url && <img src={user.photo_url} alt={user.display_name} className="avatar" />}
+        <span>{user.display_name}</span>
+        <button onClick={logout} className="signout-btn">Sign out</button>
       </div>
     </nav>
   )
