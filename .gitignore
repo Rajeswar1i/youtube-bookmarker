@@ -1,3 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+backend/venv/
+backend/.env
+
+# Frontend env
+frontend/.env
+
 # Logs
 logs
 *.log

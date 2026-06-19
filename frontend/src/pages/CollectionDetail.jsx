@@ -1,14 +1,12 @@
 import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useCollections } from '../context/CollectionContext'
-import { db } from '../firebase'
-import { doc, setDoc } from 'firebase/firestore'
 import VideoCard from '../components/VideoCard'
 import './CollectionDetail.css'
 
 function CollectionDetail() {
   const { id } = useParams()
-  const { collections, removeVideoFromCollection } = useCollections()
+  const { collections, removeVideoFromCollection, shareCollection } = useCollections()
   const [search, setSearch] = useState('')
   const [shareLink, setShareLink] = useState(null)
   const [sharing, setSharing] = useState(false)
@@ -27,12 +25,8 @@ function CollectionDetail() {
   const handleShare = async () => {
     setSharing(true)
     try {
-      const ref = doc(db, 'publicCollections', id)
-      await setDoc(ref, {
-        name: col.name,
-        videos: col.videos || []
-      })
-      setShareLink(`${window.location.origin}/share/${id}`)
+      const data = await shareCollection(id)
+      setShareLink(data.share_url)
     } catch (err) {
       console.error(err)
     }
@@ -73,19 +67,19 @@ function CollectionDetail() {
       <div className="video-grid">
         {filtered.map((video) => {
           const normalized = {
-            videoId: video.videoId,
+            id: { videoId: video.video_id },
             snippet: {
               title: video.title,
-              channelTitle: video.channelTitle,
-              publishedAt: video.publishedAt,
+              channelTitle: video.channel_name,
+              publishedAt: video.added_at,
               thumbnails: { medium: { url: video.thumbnail } }
             }
           }
           return (
-            <VideoCard key={video.videoId} video={normalized}>
+            <VideoCard key={video.video_id} video={normalized}>
               <button
                 className="remove-btn"
-                onClick={() => removeVideoFromCollection(id, video.videoId)}
+                onClick={() => removeVideoFromCollection(id, video.video_id)}
               >
                 Remove
               </button>
